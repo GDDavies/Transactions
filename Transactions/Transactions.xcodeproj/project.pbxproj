@@ -23,6 +23,12 @@
 		93A38B1527B1BD9100806F86 /* OrderResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B1427B1BD9100806F86 /* OrderResponseDto.swift */; };
 		93A38B1727B1C31D00806F86 /* TransactionsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B1627B1C31D00806F86 /* TransactionsURL.swift */; };
 		93A38B1927B1C33400806F86 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B1827B1C33400806F86 /* URLRequestBuilder.swift */; };
+		93A38B1B27B1C52800806F86 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B1A27B1C52800806F86 /* PlaceholderView.swift */; };
+		93A38B1D27B1C60800806F86 /* PlaceholderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B1C27B1C60800806F86 /* PlaceholderViewModel.swift */; };
+		93A38B1F27B1C8B000806F86 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B1E27B1C8B000806F86 /* Colors.swift */; };
+		93A38B2327B1CA1A00806F86 /* IBMPlexSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93A38B2127B1CA1A00806F86 /* IBMPlexSans-Regular.ttf */; };
+		93A38B2427B1CA1A00806F86 /* IBMPlexSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93A38B2227B1CA1A00806F86 /* IBMPlexSans-SemiBold.ttf */; };
+		93A38B2627B1CA8600806F86 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B2527B1CA8600806F86 /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,12 @@
 		93A38B1427B1BD9100806F86 /* OrderResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResponseDto.swift; sourceTree = "<group>"; };
 		93A38B1627B1C31D00806F86 /* TransactionsURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsURL.swift; sourceTree = "<group>"; };
 		93A38B1827B1C33400806F86 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
+		93A38B1A27B1C52800806F86 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		93A38B1C27B1C60800806F86 /* PlaceholderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderViewModel.swift; sourceTree = "<group>"; };
+		93A38B1E27B1C8B000806F86 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		93A38B2127B1CA1A00806F86 /* IBMPlexSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Regular.ttf"; sourceTree = "<group>"; };
+		93A38B2227B1CA1A00806F86 /* IBMPlexSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		93A38B2527B1CA8600806F86 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +132,10 @@
 			children = (
 				93A38ACE27B15F4700806F86 /* MainViewController.swift */,
 				93A38B1227B1B90200806F86 /* MainViewControllerViewModel.swift */,
+				93A38B1A27B1C52800806F86 /* PlaceholderView.swift */,
+				93A38B1C27B1C60800806F86 /* PlaceholderViewModel.swift */,
+				93A38B1E27B1C8B000806F86 /* Colors.swift */,
+				93A38B2527B1CA8600806F86 /* Fonts.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +143,7 @@
 		93A38B0027B1610000806F86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				93A38B2027B1C9D700806F86 /* Fonts */,
 				93A38AD627B15F4800806F86 /* Assets.xcassets */,
 				93A38AD827B15F4800806F86 /* LaunchScreen.storyboard */,
 				93A38ADB27B15F4800806F86 /* Info.plist */,
@@ -162,6 +179,15 @@
 				93A38B0A27B1B29900806F86 /* DBOrder.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		93A38B2027B1C9D700806F86 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				93A38B2127B1CA1A00806F86 /* IBMPlexSans-Regular.ttf */,
+				93A38B2227B1CA1A00806F86 /* IBMPlexSans-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A38ADA27B15F4800806F86 /* LaunchScreen.storyboard in Resources */,
+				93A38B2327B1CA1A00806F86 /* IBMPlexSans-Regular.ttf in Resources */,
+				93A38B2427B1CA1A00806F86 /* IBMPlexSans-SemiBold.ttf in Resources */,
 				93A38AD727B15F4800806F86 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,11 +299,15 @@
 				93A38B1127B1B5BC00806F86 /* TransactionsDatabaseService.swift in Sources */,
 				93A38B1727B1C31D00806F86 /* TransactionsURL.swift in Sources */,
 				93A38B0F27B1B2CA00806F86 /* Order.swift in Sources */,
+				93A38B2627B1CA8600806F86 /* Fonts.swift in Sources */,
 				93A38B0227B16DB700806F86 /* Networking.swift in Sources */,
 				93A38B0B27B1B29900806F86 /* DBOrder.swift in Sources */,
+				93A38B1F27B1C8B000806F86 /* Colors.swift in Sources */,
 				93A38ACB27B15F4700806F86 /* AppDelegate.swift in Sources */,
 				93A38AFE27B160CE00806F86 /* Coordinator.swift in Sources */,
+				93A38B1D27B1C60800806F86 /* PlaceholderViewModel.swift in Sources */,
 				93A38AD527B15F4700806F86 /* Transactions.xcdatamodeld in Sources */,
+				93A38B1B27B1C52800806F86 /* PlaceholderView.swift in Sources */,
 				93A38B1527B1BD9100806F86 /* OrderResponseDto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
