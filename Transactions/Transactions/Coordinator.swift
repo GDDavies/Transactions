@@ -21,7 +21,9 @@ final class MainCoordinator: Coordinator {
     }
     
     func start() {
-        
+        let viewModel = MainViewControllerViewModel()
+        let viewController = MainViewController(viewModel: viewModel)
+        navigationController.setViewControllers([viewController], animated: false)
     }
     
 }

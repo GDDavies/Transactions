@@ -30,7 +30,7 @@ final class Networking {
             } else {
                 completion(.failure(NetworkingError.generic))
             }
-        }
+        }.resume()
     }
     
 }

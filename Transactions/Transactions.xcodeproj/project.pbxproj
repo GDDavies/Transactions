@@ -15,8 +15,14 @@
 		93A38AE527B15F4800806F86 /* TransactionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38AE427B15F4800806F86 /* TransactionsTests.swift */; };
 		93A38AFE27B160CE00806F86 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38AFD27B160CE00806F86 /* Coordinator.swift */; };
 		93A38B0227B16DB700806F86 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B0127B16DB700806F86 /* Networking.swift */; };
-		93A38B0427B18D2B00806F86 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B0327B18D2B00806F86 /* URLRequestBuilder.swift */; };
-		93A38B0627B18DBC00806F86 /* TransactionsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B0527B18DBC00806F86 /* TransactionsURL.swift */; };
+		93A38B0B27B1B29900806F86 /* DBOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B0A27B1B29900806F86 /* DBOrder.swift */; };
+		93A38B0D27B1B2BE00806F86 /* OrderDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B0C27B1B2BE00806F86 /* OrderDto.swift */; };
+		93A38B0F27B1B2CA00806F86 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B0E27B1B2CA00806F86 /* Order.swift */; };
+		93A38B1127B1B5BC00806F86 /* TransactionsDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B1027B1B5BC00806F86 /* TransactionsDatabaseService.swift */; };
+		93A38B1327B1B90200806F86 /* MainViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B1227B1B90200806F86 /* MainViewControllerViewModel.swift */; };
+		93A38B1527B1BD9100806F86 /* OrderResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B1427B1BD9100806F86 /* OrderResponseDto.swift */; };
+		93A38B1727B1C31D00806F86 /* TransactionsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B1627B1C31D00806F86 /* TransactionsURL.swift */; };
+		93A38B1927B1C33400806F86 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B1827B1C33400806F86 /* URLRequestBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +47,14 @@
 		93A38AE427B15F4800806F86 /* TransactionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTests.swift; sourceTree = "<group>"; };
 		93A38AFD27B160CE00806F86 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		93A38B0127B16DB700806F86 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		93A38B0327B18D2B00806F86 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
-		93A38B0527B18DBC00806F86 /* TransactionsURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsURL.swift; sourceTree = "<group>"; };
+		93A38B0A27B1B29900806F86 /* DBOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBOrder.swift; sourceTree = "<group>"; };
+		93A38B0C27B1B2BE00806F86 /* OrderDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDto.swift; sourceTree = "<group>"; };
+		93A38B0E27B1B2CA00806F86 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		93A38B1027B1B5BC00806F86 /* TransactionsDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsDatabaseService.swift; sourceTree = "<group>"; };
+		93A38B1227B1B90200806F86 /* MainViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerViewModel.swift; sourceTree = "<group>"; };
+		93A38B1427B1BD9100806F86 /* OrderResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResponseDto.swift; sourceTree = "<group>"; };
+		93A38B1627B1C31D00806F86 /* TransactionsURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsURL.swift; sourceTree = "<group>"; };
+		93A38B1827B1C33400806F86 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,9 +99,10 @@
 				93A38ACA27B15F4700806F86 /* AppDelegate.swift */,
 				93A38AFD27B160CE00806F86 /* Coordinator.swift */,
 				93A38AFF27B160F200806F86 /* Views */,
+				93A38B0927B1B27C00806F86 /* Models */,
 				93A38B0727B18FF600806F86 /* Networking */,
+				93A38B0827B1B1C500806F86 /* Database */,
 				93A38B0027B1610000806F86 /* Resources */,
-				93A38AD327B15F4700806F86 /* Transactions.xcdatamodeld */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -106,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				93A38ACE27B15F4700806F86 /* MainViewController.swift */,
+				93A38B1227B1B90200806F86 /* MainViewControllerViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,10 +138,30 @@
 			isa = PBXGroup;
 			children = (
 				93A38B0127B16DB700806F86 /* Networking.swift */,
-				93A38B0327B18D2B00806F86 /* URLRequestBuilder.swift */,
-				93A38B0527B18DBC00806F86 /* TransactionsURL.swift */,
+				93A38B1627B1C31D00806F86 /* TransactionsURL.swift */,
+				93A38B1827B1C33400806F86 /* URLRequestBuilder.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		93A38B0827B1B1C500806F86 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				93A38B1027B1B5BC00806F86 /* TransactionsDatabaseService.swift */,
+				93A38AD327B15F4700806F86 /* Transactions.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		93A38B0927B1B27C00806F86 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				93A38B0E27B1B2CA00806F86 /* Order.swift */,
+				93A38B0C27B1B2BE00806F86 /* OrderDto.swift */,
+				93A38B1427B1BD9100806F86 /* OrderResponseDto.swift */,
+				93A38B0A27B1B29900806F86 /* DBOrder.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,13 +264,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A38B1327B1B90200806F86 /* MainViewControllerViewModel.swift in Sources */,
+				93A38B0D27B1B2BE00806F86 /* OrderDto.swift in Sources */,
+				93A38B1927B1C33400806F86 /* URLRequestBuilder.swift in Sources */,
 				93A38ACF27B15F4700806F86 /* MainViewController.swift in Sources */,
+				93A38B1127B1B5BC00806F86 /* TransactionsDatabaseService.swift in Sources */,
+				93A38B1727B1C31D00806F86 /* TransactionsURL.swift in Sources */,
+				93A38B0F27B1B2CA00806F86 /* Order.swift in Sources */,
 				93A38B0227B16DB700806F86 /* Networking.swift in Sources */,
+				93A38B0B27B1B29900806F86 /* DBOrder.swift in Sources */,
 				93A38ACB27B15F4700806F86 /* AppDelegate.swift in Sources */,
 				93A38AFE27B160CE00806F86 /* Coordinator.swift in Sources */,
 				93A38AD527B15F4700806F86 /* Transactions.xcdatamodeld in Sources */,
-				93A38B0627B18DBC00806F86 /* TransactionsURL.swift in Sources */,
-				93A38B0427B18D2B00806F86 /* URLRequestBuilder.swift in Sources */,
+				93A38B1527B1BD9100806F86 /* OrderResponseDto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
