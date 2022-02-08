@@ -13,12 +13,16 @@ final class MainViewControllerViewModel {
         !interactor.isDatabaseEmpty
     }
 
-    private let interactor: OrdersInteractorProtocol
-
     var ordersDidUpdate: (() -> Void)?
+
+    let placeholderViewModel = PlaceholderViewModel()
+    private let interactor: OrdersInteractorProtocol
 
     init(interactor: OrdersInteractorProtocol) {
         self.interactor = interactor
+        placeholderViewModel.didTapActionButton = { [weak self] in
+            self?.didTapDownloadButton()
+        }
     }
 
     convenience init() {
@@ -48,6 +52,7 @@ final class MainViewControllerViewModel {
             case .success:
                 self?.interactor.fetchOrders {
                     DispatchQueue.main.async {
+                        self?.placeholderViewModel.stopActivityIndicator?()
                         self?.ordersDidUpdate?()
                     }
                 }

@@ -16,11 +16,7 @@ class MainViewController: UIViewController {
 
     init(viewModel: MainViewControllerViewModel) {
         self.viewModel = viewModel
-        let placeholderViewModel = PlaceholderViewModel()
-        placeholderViewModel.didTapActionButton = {
-            viewModel.didTapDownloadButton()
-        }
-        self.placeholder = PlaceholderView(viewModel: placeholderViewModel)
+        self.placeholder = PlaceholderView(viewModel: viewModel.placeholderViewModel)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -38,7 +34,6 @@ class MainViewController: UIViewController {
         viewModel.ordersDidUpdate = { [weak self] in
             guard let self = self else { return }
             self.update(with: self.viewModel)
-            self.placeholder.viewModel.stopActivityIndicator?()
             self.tableView.reloadData()
         }
     }

@@ -28,7 +28,7 @@ final class PlaceholderView: UIView {
         return indicator
     }()
     
-    let viewModel: PlaceholderViewModel
+    private let viewModel: PlaceholderViewModel
 
     init(viewModel: PlaceholderViewModel) {
         self.viewModel = viewModel
