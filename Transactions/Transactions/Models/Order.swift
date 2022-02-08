@@ -30,7 +30,7 @@ extension Order {
             case .withdraw:
                 return NSLocalizedString("Out", comment: "")
             case .buy, .sell:
-                return nil // implement here
+                return nil
             }
         }
     }
