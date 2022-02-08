@@ -36,6 +36,7 @@ final class OrderCell: UITableViewCell {
         contentView.backgroundColor = backgroundColor
         verticalStackView.axis = .vertical
         verticalStackView.spacing = 4
+        verticalStackView.distribution = .fillEqually
 
         titleLabel.textColor = .white
         titleLabel.font = Font.regular(size: 15)

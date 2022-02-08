@@ -9,12 +9,14 @@ import Foundation
 
 final class OrderDateFormatter {
 
-    static let shared = OrderDateFormatter()
-
-    func convert(date: Date) -> String {
+    private static let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale.current
         formatter.dateFormat = "MMM d, yyyy h:mm a"
-        return formatter.string(from: date)
+        return formatter
+    }()
+
+    static func convert(date: Date) -> String {
+        formatter.string(from: date)
     }
 }

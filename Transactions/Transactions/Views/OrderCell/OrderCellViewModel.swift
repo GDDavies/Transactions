@@ -25,10 +25,10 @@ struct OrderCellViewModel {
                 title = order.currency
             }
         }
-        subtitle = OrderDateFormatter.shared.convert(
+        subtitle = OrderDateFormatter.convert(
             date: order.createdAt
         )
-        detailTitle = CryptoFormatter.shared.convert(
+        detailTitle = CryptoFormatter.convert(
             value: order.amount,
             currency: order.currency,
             orderType: order.orderType

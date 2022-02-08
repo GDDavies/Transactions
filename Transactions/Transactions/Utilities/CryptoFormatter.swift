@@ -9,18 +9,20 @@ import Foundation
 
 final class CryptoFormatter {
 
-    static let shared = CryptoFormatter()
+    private static let formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 4
+        return formatter
+    }()
 
-    func convert(value: String, currency: String, orderType: Order.OrderType) -> String? {
+    static func convert(value: String, currency: String, orderType: Order.OrderType) -> String? {
         guard
             let number = Decimal(string: value) as NSNumber?
         else {
             return nil
         }
-        let formatter = NumberFormatter()
-        formatter.locale = Locale.current
-        formatter.numberStyle = .decimal
-        formatter.maximumFractionDigits = 4
 
         switch orderType {
         case .buy, .deposit:

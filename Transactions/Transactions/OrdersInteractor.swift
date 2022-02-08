@@ -10,7 +10,7 @@ import UIKit
 
 protocol OrdersInteractorProtocol {
     var isDatabaseEmpty: Bool { get }
-    func fetchOrders(completion: @escaping () -> Void)
+    func fetchOrders(completion: @escaping (Result<Void, Error>) -> Void)
     func numberOfOrders() -> Int
     func order(at row: Int) -> Order?
     func getRemoteOrders(completion: ((Result<Void, Error>) -> Void)?)
@@ -18,11 +18,11 @@ protocol OrdersInteractorProtocol {
 
 final class OrdersInteractor: OrdersInteractorProtocol {
 
-    private let repository: OrdersRepositoryProtocol
-
     var isDatabaseEmpty: Bool {
         repository.numberOfOrders() == 0
     }
+
+    private let repository: OrdersRepositoryProtocol
 
     init(repository: OrdersRepositoryProtocol) {
         self.repository = repository
@@ -32,10 +32,8 @@ final class OrdersInteractor: OrdersInteractorProtocol {
         self.init(repository: OrdersRepository())
     }
 
-    func fetchOrders(completion: @escaping () -> Void) {
-        if isDatabaseEmpty {
-            repository.fetchOrderDtos(completion: completion)
-        }
+    func fetchOrders(completion: @escaping (Result<Void, Error>) -> Void) {
+        repository.fetchOrderDtos(completion: completion)
     }
 
     func numberOfOrders() -> Int {

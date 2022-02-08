@@ -8,8 +8,7 @@
 import Foundation
 
 protocol OrdersRepositoryProtocol {
-    // listen for new orders
-    func fetchOrderDtos(completion: @escaping () -> Void)
+    func fetchOrderDtos(completion: @escaping (Result<Void, Error>) -> Void)
     func numberOfOrders() -> Int
     func order(at row: Int) -> OrderDto?
     func getRemoteOrders(completion: ((Result<Void, Error>) -> Void)?)
@@ -35,7 +34,7 @@ final class OrdersRepository: OrdersRepositoryProtocol {
         )
     }
 
-    func fetchOrderDtos(completion: @escaping () -> Void) {
+    func fetchOrderDtos(completion: @escaping (Result<Void, Error>) -> Void) {
         databaseService.fetchOrderDtos(completion: completion)
     }
 

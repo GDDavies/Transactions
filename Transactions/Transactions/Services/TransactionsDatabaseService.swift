@@ -9,8 +9,8 @@ import Foundation
 import CoreData
 
 protocol TransactionsDatabaseServiceProtocol {
-    func save(orderDtos: [OrderDto], completion: ((Result<Void, Error>) -> Void)?) // should be consistent e.g. DBOrder
-    func fetchOrderDtos(completion: @escaping () -> Void)
+    func save(orderDtos: [OrderDto], completion: ((Result<Void, Error>) -> Void)?)
+    func fetchOrderDtos(completion: @escaping (Result<Void, Error>) -> Void)
     func numberOfOrders() -> Int
     func order(at row: Int) -> DBOrder?
 }
@@ -74,7 +74,7 @@ final class TransactionsDatabaseService: NSObject, TransactionsDatabaseServicePr
             
             do {
                 try context.execute(batchInsert)
-                try! context.save()
+                try context.save()
                 completion?(.success(Void()))
             } catch let error {
                 completion?(.failure(error))
@@ -82,14 +82,14 @@ final class TransactionsDatabaseService: NSObject, TransactionsDatabaseServicePr
         }
     }
 
-    func fetchOrderDtos(completion: @escaping () -> Void) {
+    func fetchOrderDtos(completion: @escaping (Result<Void, Error>) -> Void) {
         let context = fetchedResultsController.managedObjectContext
         context.perform { [weak fetchedResultsController] in
             do {
                 try fetchedResultsController?.performFetch()
-                completion()
-            } catch {
-                print("Fetch failed")
+                completion(.success(Void()))
+            } catch let error {
+                completion(.failure(error))
             }
         }
     }

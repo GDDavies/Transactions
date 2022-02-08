@@ -30,9 +30,15 @@ final class MainViewControllerViewModel {
     }
 
     func fetchOrders() {
-        interactor.fetchOrders { [weak self] in
+        interactor.fetchOrders { [weak self] result in
             DispatchQueue.main.async {
-                self?.ordersDidUpdate?()
+                switch result {
+                case .success:
+                    self?.ordersDidUpdate?()
+                case let .failure(error):
+                    // TODO: Error alert
+                    print(error)
+                }
             }
         }
     }
@@ -47,17 +53,24 @@ final class MainViewControllerViewModel {
     }
 
     func didTapDownloadButton() {
-        interactor.getRemoteOrders { [weak self] result in
-            switch result {
+        interactor.getRemoteOrders { [weak self] remoteOrdersResult in
+            switch remoteOrdersResult {
             case .success:
-                self?.interactor.fetchOrders {
+                self?.interactor.fetchOrders { localOrdersResult in
                     DispatchQueue.main.async {
-                        self?.placeholderViewModel.stopActivityIndicator?()
-                        self?.ordersDidUpdate?()
+                        switch localOrdersResult {
+                        case .success:
+                            self?.placeholderViewModel.stopActivityIndicator?()
+                            self?.ordersDidUpdate?()
+                        case let .failure(error):
+                            // TODO: Error alert
+                            print(error)
+                        }
                     }
                 }
             case let .failure(error):
-                print(error) // TODO: Error alert
+                // TODO: Error alert
+                print(error)
             }
         }
     }
