@@ -7,8 +7,11 @@
 
 import Foundation
 
-final class Networking {
-    
+protocol NetworkingProcotol {
+    func fetch<T: Decodable>(request: URLRequest, completion: @escaping (Result<T, Error>) -> Void)
+}
+
+final class Networking: NetworkingProcotol {
     func fetch<T: Decodable>(request: URLRequest, completion: @escaping (Result<T, Error>) -> Void) {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
@@ -32,7 +35,6 @@ final class Networking {
             }
         }.resume()
     }
-    
 }
 
 extension Networking {

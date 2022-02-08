@@ -22,6 +22,17 @@ extension Order {
         case withdraw
         case buy
         case sell
+
+        var orderPrefix: String? {
+            switch self {
+            case .deposit:
+                return NSLocalizedString("In", comment: "")
+            case .withdraw:
+                return NSLocalizedString("Out", comment: "")
+            case .buy, .sell:
+                return nil // implement here
+            }
+        }
     }
     
     enum OrderStatus: String {

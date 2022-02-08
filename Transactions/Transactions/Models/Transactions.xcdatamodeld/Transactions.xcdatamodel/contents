@@ -7,6 +7,11 @@
         <attribute name="id" attributeType="String"/>
         <attribute name="orderStatus" attributeType="String"/>
         <attribute name="orderType" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
         <element name="UserOrder" positionX="-63" positionY="-18" width="128" height="119"/>

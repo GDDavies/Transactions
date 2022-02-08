@@ -38,7 +38,7 @@ extension OrderDto {
             amount: amount,
             orderType: orderType,
             orderStatus: orderStatus,
-            createdAt: Date(timeIntervalSince1970: timeInterval)
+            createdAt: Date(timeIntervalSince1970: timeInterval / 1000)
         )
     }
 }

@@ -15,15 +15,28 @@ final class PlaceholderView: UIView {
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
     private let actionButton = UIButton()
+
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.hidesWhenStopped = true
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        actionButton.addSubview(indicator)
+        NSLayoutConstraint.activate([
+            indicator.centerXAnchor.constraint(equalTo: actionButton.centerXAnchor),
+            indicator.centerYAnchor.constraint(equalTo: actionButton.centerYAnchor)
+        ])
+        return indicator
+    }()
     
-    private let model = PlaceholderViewModel()
-    
-    init() {
+    let viewModel: PlaceholderViewModel
+
+    init(viewModel: PlaceholderViewModel) {
+        self.viewModel = viewModel
         super.init(frame: .zero)
         setupViews()
         setupHierarchy()
         setupLayout()
-        update(with: model)
+        update(with: viewModel)
     }
     
     required init?(coder: NSCoder) {
@@ -42,8 +55,11 @@ final class PlaceholderView: UIView {
 
         actionButton.backgroundColor = Color.brand
         actionButton.setTitleColor(.black, for: .normal)
+        actionButton.setTitle("", for: .disabled)
         actionButton.titleLabel?.font = Font.semiBold(size: 16)
         actionButton.layer.cornerRadius = 4
+        actionButton.addSubview(activityIndicator)
+        actionButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
     }
     
     private func setupHierarchy() {
@@ -72,9 +88,25 @@ final class PlaceholderView: UIView {
     }
     
     private func update(with model: PlaceholderViewModel) {
-        imageView.image = model.image
-        titleLabel.text = model.title
-        subtitleLabel.text = model.subtitle
-        actionButton.setTitle(model.buttonTitle, for: .normal)
+        imageView.image = viewModel.image
+        titleLabel.text = viewModel.title
+        subtitleLabel.text = viewModel.subtitle
+        actionButton.setTitle(viewModel.buttonTitle, for: .normal)
+
+        viewModel.startActivityIndicator = { [weak self] in
+            self?.activityIndicator.startAnimating()
+            self?.actionButton.isEnabled = false
+        }
+
+        viewModel.stopActivityIndicator = { [weak self] in
+            self?.activityIndicator.stopAnimating()
+            self?.actionButton.isEnabled = true
+        }
+    }
+
+    @objc
+    private func didTapActionButton() {
+        viewModel.didTapActionButton?()
+        viewModel.startActivityIndicator?()
     }
 }

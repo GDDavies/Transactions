@@ -29,6 +29,13 @@
 		93A38B2327B1CA1A00806F86 /* IBMPlexSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93A38B2127B1CA1A00806F86 /* IBMPlexSans-Regular.ttf */; };
 		93A38B2427B1CA1A00806F86 /* IBMPlexSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93A38B2227B1CA1A00806F86 /* IBMPlexSans-SemiBold.ttf */; };
 		93A38B2627B1CA8600806F86 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B2527B1CA8600806F86 /* Fonts.swift */; };
+		93A38B2A27B1CE7C00806F86 /* OrdersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B2927B1CE7C00806F86 /* OrdersInteractor.swift */; };
+		93A38B2C27B1CE8500806F86 /* OrdersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B2B27B1CE8500806F86 /* OrdersRepository.swift */; };
+		93A38B2E27B1CF1500806F86 /* TransactionsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B2D27B1CF1500806F86 /* TransactionsNetworkService.swift */; };
+		93A38B3127B1D7BA00806F86 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B3027B1D7BA00806F86 /* OrderCell.swift */; };
+		93A38B3327B1D7C100806F86 /* OrderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B3227B1D7C100806F86 /* OrderCellViewModel.swift */; };
+		93A38B3627B2843C00806F86 /* CryptoFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B3527B2843C00806F86 /* CryptoFormatter.swift */; };
+		93A38B3827B28D5900806F86 /* OrderDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A38B3727B28D5900806F86 /* OrderDateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +74,13 @@
 		93A38B2127B1CA1A00806F86 /* IBMPlexSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-Regular.ttf"; sourceTree = "<group>"; };
 		93A38B2227B1CA1A00806F86 /* IBMPlexSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		93A38B2527B1CA8600806F86 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		93A38B2927B1CE7C00806F86 /* OrdersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersInteractor.swift; sourceTree = "<group>"; };
+		93A38B2B27B1CE8500806F86 /* OrdersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersRepository.swift; sourceTree = "<group>"; };
+		93A38B2D27B1CF1500806F86 /* TransactionsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsNetworkService.swift; sourceTree = "<group>"; };
+		93A38B3027B1D7BA00806F86 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		93A38B3227B1D7C100806F86 /* OrderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCellViewModel.swift; sourceTree = "<group>"; };
+		93A38B3527B2843C00806F86 /* CryptoFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoFormatter.swift; sourceTree = "<group>"; };
+		93A38B3727B28D5900806F86 /* OrderDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +124,13 @@
 			children = (
 				93A38ACA27B15F4700806F86 /* AppDelegate.swift */,
 				93A38AFD27B160CE00806F86 /* Coordinator.swift */,
+				93A38B2927B1CE7C00806F86 /* OrdersInteractor.swift */,
+				93A38B2B27B1CE8500806F86 /* OrdersRepository.swift */,
 				93A38AFF27B160F200806F86 /* Views */,
 				93A38B0927B1B27C00806F86 /* Models */,
+				93A38B0827B1B1C500806F86 /* Services */,
 				93A38B0727B18FF600806F86 /* Networking */,
-				93A38B0827B1B1C500806F86 /* Database */,
+				93A38B3427B2843000806F86 /* Utilities */,
 				93A38B0027B1610000806F86 /* Resources */,
 			);
 			path = Transactions;
@@ -130,10 +147,9 @@
 		93A38AFF27B160F200806F86 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				93A38ACE27B15F4700806F86 /* MainViewController.swift */,
-				93A38B1227B1B90200806F86 /* MainViewControllerViewModel.swift */,
-				93A38B1A27B1C52800806F86 /* PlaceholderView.swift */,
-				93A38B1C27B1C60800806F86 /* PlaceholderViewModel.swift */,
+				93A38B2727B1CDD200806F86 /* MainViewController */,
+				93A38B2827B1CDDC00806F86 /* Placeholder */,
+				93A38B2F27B1D7AF00806F86 /* OrderCell */,
 				93A38B1E27B1C8B000806F86 /* Colors.swift */,
 				93A38B2527B1CA8600806F86 /* Fonts.swift */,
 			);
@@ -161,13 +177,13 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		93A38B0827B1B1C500806F86 /* Database */ = {
+		93A38B0827B1B1C500806F86 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				93A38B1027B1B5BC00806F86 /* TransactionsDatabaseService.swift */,
-				93A38AD327B15F4700806F86 /* Transactions.xcdatamodeld */,
+				93A38B2D27B1CF1500806F86 /* TransactionsNetworkService.swift */,
 			);
-			path = Database;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		93A38B0927B1B27C00806F86 /* Models */ = {
@@ -177,6 +193,7 @@
 				93A38B0C27B1B2BE00806F86 /* OrderDto.swift */,
 				93A38B1427B1BD9100806F86 /* OrderResponseDto.swift */,
 				93A38B0A27B1B29900806F86 /* DBOrder.swift */,
+				93A38AD327B15F4700806F86 /* Transactions.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,6 +205,42 @@
 				93A38B2227B1CA1A00806F86 /* IBMPlexSans-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		93A38B2727B1CDD200806F86 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				93A38ACE27B15F4700806F86 /* MainViewController.swift */,
+				93A38B1227B1B90200806F86 /* MainViewControllerViewModel.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		93A38B2827B1CDDC00806F86 /* Placeholder */ = {
+			isa = PBXGroup;
+			children = (
+				93A38B1A27B1C52800806F86 /* PlaceholderView.swift */,
+				93A38B1C27B1C60800806F86 /* PlaceholderViewModel.swift */,
+			);
+			path = Placeholder;
+			sourceTree = "<group>";
+		};
+		93A38B2F27B1D7AF00806F86 /* OrderCell */ = {
+			isa = PBXGroup;
+			children = (
+				93A38B3027B1D7BA00806F86 /* OrderCell.swift */,
+				93A38B3227B1D7C100806F86 /* OrderCellViewModel.swift */,
+			);
+			path = OrderCell;
+			sourceTree = "<group>";
+		};
+		93A38B3427B2843000806F86 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				93A38B3527B2843C00806F86 /* CryptoFormatter.swift */,
+				93A38B3727B28D5900806F86 /* OrderDateFormatter.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,11 +346,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A38B1327B1B90200806F86 /* MainViewControllerViewModel.swift in Sources */,
+				93A38B3827B28D5900806F86 /* OrderDateFormatter.swift in Sources */,
 				93A38B0D27B1B2BE00806F86 /* OrderDto.swift in Sources */,
 				93A38B1927B1C33400806F86 /* URLRequestBuilder.swift in Sources */,
 				93A38ACF27B15F4700806F86 /* MainViewController.swift in Sources */,
 				93A38B1127B1B5BC00806F86 /* TransactionsDatabaseService.swift in Sources */,
+				93A38B2A27B1CE7C00806F86 /* OrdersInteractor.swift in Sources */,
 				93A38B1727B1C31D00806F86 /* TransactionsURL.swift in Sources */,
+				93A38B3327B1D7C100806F86 /* OrderCellViewModel.swift in Sources */,
 				93A38B0F27B1B2CA00806F86 /* Order.swift in Sources */,
 				93A38B2627B1CA8600806F86 /* Fonts.swift in Sources */,
 				93A38B0227B16DB700806F86 /* Networking.swift in Sources */,
@@ -305,10 +361,14 @@
 				93A38B1F27B1C8B000806F86 /* Colors.swift in Sources */,
 				93A38ACB27B15F4700806F86 /* AppDelegate.swift in Sources */,
 				93A38AFE27B160CE00806F86 /* Coordinator.swift in Sources */,
+				93A38B2E27B1CF1500806F86 /* TransactionsNetworkService.swift in Sources */,
 				93A38B1D27B1C60800806F86 /* PlaceholderViewModel.swift in Sources */,
+				93A38B3127B1D7BA00806F86 /* OrderCell.swift in Sources */,
 				93A38AD527B15F4700806F86 /* Transactions.xcdatamodeld in Sources */,
+				93A38B3627B2843C00806F86 /* CryptoFormatter.swift in Sources */,
 				93A38B1B27B1C52800806F86 /* PlaceholderView.swift in Sources */,
 				93A38B1527B1BD9100806F86 /* OrderResponseDto.swift in Sources */,
+				93A38B2C27B1CE8500806F86 /* OrdersRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

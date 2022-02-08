@@ -7,7 +7,11 @@
 
 import Foundation
 
-class URLRequestBuilder {
+protocol URLRequestBuilderProtocol {
+    func build() -> URLRequest
+}
+
+class URLRequestBuilder: URLRequestBuilderProtocol {
     
     enum HTTPMethod: String {
         case get = "GET"
